@@ -1,29 +1,23 @@
-let nummer = prompt("geef een getal: ")
+let user_input = Number(prompt("geef een getal: ")) +2
 
-let getal = 0
-
-for(let i = 0; i< nummer; i++) {
-    for(let z = 0; z < i+1; z++){
-        if(z == getal){
-            document.write(z + 1)
-        }
-        else{
-            document.write(z+ 1 + "-" )
-        }
-        
+for (let i = 0; i < user_input; i++){
+    const nummer = []
+    for (let z = 1; z < i; z++){
+        nummer.push(z)
     }
-    getal+= 1
+    let test = nummer.join("-")
+    document.write(test)
     document.write("<br>")
 }
-getal = 19
-for(i = nummer; i > 0; i--) {
-    for(let z = 1; z < i; z++){
-        if(z == getal){
-            document.write(z) 
-        } else{
-            document.write(z + "-")
-        }
+
+user_input = user_input - 3
+
+for (let i = user_input; i > 0; i--){
+    const nummer = []
+    for (let z = i; z > 0; z--){
+        nummer.push(z)
     }
-    getal-=1
+    let test2 = nummer.reverse()
+    document.write(test2.join("-"))
     document.write("<br>")
 }
