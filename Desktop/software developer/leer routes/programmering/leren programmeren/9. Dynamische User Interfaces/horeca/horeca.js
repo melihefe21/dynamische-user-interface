@@ -11,7 +11,7 @@ while (true) {
         if (product !== "fris" && product !== "bier" && product !== "wijn") {
             alert("Dit ken ik niet.");
         } else {
-            let aantal = prompt("Hoeveel " + product + " wil je hebben?");
+            let aantal = prompt("Hoeveel " + product + " wil je hebben?").isNaN();
             let gevonden = false;
             for (var i = 0; i < bonnetje.length; i++) {
                 if (bonnetje[i].product == product) {
