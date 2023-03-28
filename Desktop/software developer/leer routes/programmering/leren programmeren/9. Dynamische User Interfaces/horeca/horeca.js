@@ -8,22 +8,27 @@ while (true) {
     if (product == "stop") {
         break;
     } else {
-        if (product !== "fris" && product !== "bier" && product !== "wijn") {
+        let productRegex = /^(fris|bier|wijn)$/;
+        if (!productRegex.test(product)) {
             alert("Dit ken ik niet.");
         } else {
-            let aantal = prompt("Hoeveel " + product + " wil je hebben?").isNaN();
-            let gevonden = false;
-            for (var i = 0; i < bonnetje.length; i++) {
-                if (bonnetje[i].product == product) {
-                    bonnetje[i].aantal = parseInt(bonnetje[i].aantal) + parseInt(aantal);
-                    gevonden = true;
-                    break;
+            let aantal = prompt("Hoeveel " + product + " wil je hebben?");
+            if (isNaN(aantal) || aantal <= 0) {
+                alert("Voer een geldige hoeveelheid in.");
+            } else {
+                let gevonden = false;
+                for (var i = 0; i < bonnetje.length; i++) {
+                    if (bonnetje[i].product == product) {
+                        bonnetje[i].aantal = parseInt(bonnetje[i].aantal) + parseInt(aantal);
+                        gevonden = true;
+                        break;
+                    }
                 }
+                if (!gevonden) {
+                    bonnetje.push({ product: product, aantal: aantal });
+                }
+                alert(aantal + " " + product + " is toegevoegd aan het bonnetje.");
             }
-            if (!gevonden) {
-                bonnetje.push({ product: product, aantal: aantal });
-            }
-            alert(aantal + " " + product + " is toegevoegd aan het bonnetje.");
         }
     }
 }
