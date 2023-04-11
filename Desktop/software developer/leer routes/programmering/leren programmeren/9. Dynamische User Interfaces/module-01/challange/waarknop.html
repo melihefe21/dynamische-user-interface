@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Welkom</title>
+    <style>
+      header{
+        font-family: 'Top Secret Stamp', cursive;
+      }
+      #myButton {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        color: white;
+        font-family: 'Top Secret Stamp', cursive;
+      }
+      #myButton:hover {
+        background-color: red;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="welcomeHeader">Welkom</h1>
+    <button id="myButton">Klik hier</button>
+    <script>
+    let naam = prompt("hoe heet je?")
+      const button = document.getElementById("myButton");
+      const header = document.getElementById("welcomeHeader");
+      let clicked = false;
+      button.addEventListener("click", function() {
+        if (!clicked) {
+          header.innerText = "welkom "+ naam;
+          clicked = true;
+        } else {
+          button.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
