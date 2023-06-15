@@ -1,4 +1,17 @@
 img {
     width: 100px;
     height: 100px;
+    background-image: url("");
 }
+#img {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    color: white;
+}
+#img:hover {
+    background-color: red;
+    text-decoration: underline;
+    cursor: pointer;
+    color: aqua;
+  }

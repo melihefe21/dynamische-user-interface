@@ -1,0 +1,18 @@
+#gallery {
+    position: relative
+  }
+  #vorige {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+  }
+  #volgende {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
+  #afbeelding {
+    max-width: 400px; 
+    height: auto;
+    text-align: center;
+  }
